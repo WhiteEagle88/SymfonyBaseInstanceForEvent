@@ -75,11 +75,19 @@ class User extends BaseUser
      */
     protected $updatedAt;
 
+    /**
+     * {@inheritdoc}
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->roles = array('ROLE_ADMIN_USER');
+    }
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -90,6 +98,7 @@ class User extends BaseUser
      * Set username
      *
      * @param string $username
+     *
      * @return User
      */
     public function setUsername($username)
@@ -102,7 +111,7 @@ class User extends BaseUser
     /**
      * Get username
      *
-     * @return string 
+     * @return string
      */
     public function getUsername()
     {
@@ -113,6 +122,7 @@ class User extends BaseUser
      * Set usernameCanonical
      *
      * @param string $usernameCanonical
+     *
      * @return User
      */
     public function setUsernameCanonical($usernameCanonical)
@@ -125,7 +135,7 @@ class User extends BaseUser
     /**
      * Get usernameCanonical
      *
-     * @return string 
+     * @return string
      */
     public function getUsernameCanonical()
     {
@@ -136,6 +146,7 @@ class User extends BaseUser
      * Set email
      *
      * @param string $email
+     *
      * @return User
      */
     public function setEmail($email)
@@ -148,7 +159,7 @@ class User extends BaseUser
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -159,6 +170,7 @@ class User extends BaseUser
      * Set emailCanonical
      *
      * @param string $emailCanonical
+     *
      * @return User
      */
     public function setEmailCanonical($emailCanonical)
@@ -171,7 +183,7 @@ class User extends BaseUser
     /**
      * Get emailCanonical
      *
-     * @return string 
+     * @return string
      */
     public function getEmailCanonical()
     {
@@ -182,6 +194,7 @@ class User extends BaseUser
      * Set enabled
      *
      * @param boolean $enabled
+     *
      * @return User
      */
     public function setEnabled($enabled)
@@ -194,7 +207,7 @@ class User extends BaseUser
     /**
      * Get enabled
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getEnabled()
     {
@@ -205,6 +218,7 @@ class User extends BaseUser
      * Set locked
      *
      * @param boolean $locked
+     *
      * @return User
      */
     public function setLocked($locked)
@@ -217,7 +231,7 @@ class User extends BaseUser
     /**
      * Get locked
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getLocked()
     {
@@ -228,6 +242,7 @@ class User extends BaseUser
      * Set salt
      *
      * @param string $salt
+     *
      * @return User
      */
     public function setSalt($salt)
@@ -240,7 +255,7 @@ class User extends BaseUser
     /**
      * Get salt
      *
-     * @return string 
+     * @return string
      */
     public function getSalt()
     {
@@ -251,6 +266,7 @@ class User extends BaseUser
      * Set password
      *
      * @param string $password
+     *
      * @return User
      */
     public function setPassword($password)
@@ -263,7 +279,7 @@ class User extends BaseUser
     /**
      * Get password
      *
-     * @return string 
+     * @return string
      */
     public function getPassword()
     {
@@ -274,6 +290,7 @@ class User extends BaseUser
      * Set lastLogin
      *
      * @param \DateTime $lastLogin
+     *
      * @return User
      */
     public function setLastLogin(\DateTime $lastLogin)
@@ -286,7 +303,7 @@ class User extends BaseUser
     /**
      * Get lastLogin
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getLastLogin()
     {
@@ -297,6 +314,7 @@ class User extends BaseUser
      * Set confirmationToken
      *
      * @param string $confirmationToken
+     *
      * @return User
      */
     public function setConfirmationToken($confirmationToken)
@@ -309,7 +327,7 @@ class User extends BaseUser
     /**
      * Get confirmationToken
      *
-     * @return string 
+     * @return string
      */
     public function getConfirmationToken()
     {
@@ -320,6 +338,7 @@ class User extends BaseUser
      * Set createdAt
      *
      * @param \DateTime $createdAt
+     *
      * @return User
      */
     public function setCreatedAt($createdAt)
@@ -332,7 +351,7 @@ class User extends BaseUser
     /**
      * Get createdAt
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -343,6 +362,7 @@ class User extends BaseUser
      * Set updatedAt
      *
      * @param \DateTime $updatedAt
+     *
      * @return User
      */
     public function setUpdatedAt($updatedAt)
@@ -355,12 +375,13 @@ class User extends BaseUser
     /**
      * Get updatedAt
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
         return $this->updatedAt;
     }
+
     /**
      * @ORM\PrePersist
      */

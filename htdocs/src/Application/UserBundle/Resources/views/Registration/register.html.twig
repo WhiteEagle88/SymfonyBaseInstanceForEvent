@@ -1,0 +1,31 @@
+{% extends base_template %}
+
+{% block sonata_nav %}
+{% endblock sonata_nav %}
+
+{% block logo %}
+{% endblock logo %}
+
+{% block sonata_left_side %}
+{% endblock sonata_left_side %}
+
+{% block body_attributes %}class="sonata-bc bg-black"{% endblock %}
+
+{% block sonata_wrapper %}
+    <div class="form-box" id="login-box">
+        <div class="header">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</div>
+        {% block sonata_user_login_form %}
+            <form name="application_user_registration" method="POST" {{ form_enctype(form) }}>
+                <div class="body bg-gray">
+                    {% form_theme form 'bootstrap_3_layout.html.twig' %}
+                    {{ form_widget(form) }}
+                    <a href="{{ path('application_sonata_admin_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                </div>
+
+                <div class="footer">
+                    <button type="submit" id="_submit" name="_submit" class="btn bg-olive btn-block">{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}</button>
+                </div>
+            </form>
+        {% endblock %}
+    </div>
+{% endblock sonata_wrapper %}

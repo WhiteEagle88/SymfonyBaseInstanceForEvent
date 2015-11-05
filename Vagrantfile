@@ -21,6 +21,7 @@ Vagrant::configure("2") do |config|
   config.vm.box = "#{vmData['box']}"
 
   config.vm.hostname = "#{vmData['host_name']}"
+  config.vm.network :forwarded_port, guest: 80, host: 8888
   config.vm.synced_folder "#{vmData['synced_folder_from']}", "#{vmData['synced_folder_to']}", type: "#{vmData['synced_folder_type']}"
 
   config.vm.network :private_network, ip: "#{vmData['network_ip']}"

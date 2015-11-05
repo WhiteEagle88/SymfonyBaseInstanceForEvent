@@ -1,7 +1,10 @@
 #!/bin/sh
 
+rm -R /etc/nginx/sites-enabled/*
+
 echo "server {
-          server_name $1;
+          listen 80 default_server;
+          listen [::]:80 default_server ipv6only=on;
           root $2/web;
 
           client_max_body_size 40m;

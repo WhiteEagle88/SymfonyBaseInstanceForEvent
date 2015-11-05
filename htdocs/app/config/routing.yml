@@ -1,3 +1,7 @@
+web_challenge_main:
+    resource: "@WebChallengeMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
 application_sonata_admin:
     resource: "@ApplicationSonataAdminBundle/Resources/config/routing.yml"
     prefix:   /
